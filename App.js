@@ -18,21 +18,7 @@ import { DocumentDirectoryPath, ExternalDirectoryPath } from 'react-native-fs';
 import ScannedPagesStore from './ScannedPagesStore';
 import HomeScreen from './screens/HomeScreen';
 
-
-const SDK_LICENSE_KEY = "o+rbC5dHCZ5/QkVkq/NmObKlMk339A" +
-"Ib92dJwzEFu643CO22Qzx8guASahQA" +
-"JKxVvi5MJeSMtSYLtaK0DkCd8KF9lH" +
-"zmMDZfsQy1zOSDsDvMe3r2oxEtVhOd" +
-"906eS7WRWaFOVFkroLHBlc9hqiaVDu" +
-"q2d//JjeQNZWAhmJ7TidMYi7qVK/AN" +
-"XNARzaBRUf2+5OTOzs/vIN6P7+O2sX" +
-"zOkAq3iUykSVjdmyVDBTnEfCAu2FYU" +
-"FYV0vhkuKzSYZ0o6WUV6divyzNdpYt" +
-"s1RlFt+dWlY4HBygtxT38sbmf8fNEQ" +
-"SR8KJfKjpuKs46HOHj1LsBZLTqXpFC" +
-"7lUhTs/Gh8hQ==\nU2NhbmJvdFNESw" +
-"pvcmcudHJpcG9zLnN1cG8KMTU4NzI1" +
-"NDM5OQo1OTAKMw==\n";
+import { SDK_LICENSE_KEY } from './license';
 
 const MainStack = createStackNavigator({
   Home: HomeScreen,
@@ -76,7 +62,7 @@ export default class App extends Component {
 
   async initializeSDK() {
     const options = {
-      licenseKey: "",
+      licenseKey: SDK_LICENSE_KEY,
       loggingEnabled: true, // Consider switching logging OFF in production builds for security and performance reasons!
       storageImageFormat: 'JPG',
       storageImageQuality: 80,
